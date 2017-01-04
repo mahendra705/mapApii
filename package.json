@@ -5,7 +5,7 @@
   "author": "Mahendra",
   "license": "MIT",
   "scripts": {
-  "start": "supervisor app.js"
+  "start": "node app.js"
 },
 "main": "app.js",
   "dependencies": {

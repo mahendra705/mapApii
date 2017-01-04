@@ -2,7 +2,7 @@ var appRouter = function (app) {
     var data = {};
 
     app.get("/", function (req, res) {
-        res.send("Hello World");
+        res.send("Hello Mahendra");
     });
 
     app.get("/getLatLong", function (req, res) {

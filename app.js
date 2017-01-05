@@ -2,6 +2,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+  ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,8 +17,6 @@ app.use(function (req, res, next) {
 
 var routes = require("./routes/routes.js")(app);
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8000,
-  ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
